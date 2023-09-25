@@ -1,7 +1,3 @@
----
-gitea: none
-include_toc: true
----
 # Week 0 — Billing and Architecture
 ## <center>Billing </center>
 As part of your AWS subcription, you have to keep cost in 
