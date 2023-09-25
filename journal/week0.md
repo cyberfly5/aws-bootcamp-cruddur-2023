@@ -18,10 +18,17 @@ mind and detect any anomalies to your account. **You should configure immediate 
 ![Alt text](../_docs/assets/napkin.jpg)
 
 **Crudder Conceptual Architectural Design in Lucid** 
-https://lucid.app/lucidchart/invitations/accept/inv_9601902e-6fc9-457b-bcb1-83b8a61d8540
+
+[Conceptual Diagram](https://lucid.app/lucidchart/invitations/accept/inv_9601902e-6fc9-457b-bcb1-83b8a61d8540)
+![Alt text](<../_docs/assets/Conceptual Diagram.png>)
+
 
 **Cruddur Logical Architectural Design in Lucid** 
-https://lucid.app/lucidchart/invitations/accept/inv_2e46f0c5-81e6-4ecc-80a1-889bed67465c
+
+[Logical Diagram](https://lucid.app/lucidchart/invitations/accept/inv_2e46f0c5-81e6-4ecc-80a1-889bed67465c)
+
+![Alt text](<../_docs/assets/Logical Diagram.png>)
+
 
 ## Create an Admin User
 -	Create AWS account and sign in as Root 
@@ -35,10 +42,9 @@ https://lucid.app/lucidchart/invitations/accept/inv_2e46f0c5-81e6-4ecc-80a1-889b
 -	Setup MFA for this admin account
 
 ## Install AWS CLI
-[CLI reference]https://docs.aws.amazon.com/cli/latest/
+[CLI reference](https://docs.aws.amazon.com/cli/latest/)
 
-[AWS CLI Install guide]https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
-
+[AWS CLI Install guide](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
 ### Install AWS CLI for GitPod 
 -	Updated the `.gitpod.yml` file with the following task so AWS CLI runs in partial auto-prompt mode in GitPod upon launching of the GitPod environment.
 ```sh
@@ -54,7 +60,8 @@ tasks:
       cd $THEIA_WORKSPACE_ROOT
 ```
 
-**UPDATED gitpod.yml** (https://github.com/cyberfly5/aws-bootcamp-cruddur-2023/main/.gitpod.yml)
+**UPDATED gitpod file** 
+[gitpod.yml](https://github.com/cyberfly5/aws-bootcamp-cruddur-2023/main/.gitpod.yml)
 
 ## Use AWS CloudShell
 -	Login as Admin and launch AWS Cloudshell in the browser
