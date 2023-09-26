@@ -37,7 +37,7 @@ mind and detect any anomalies to your account. **You should configure immediate 
 -	Enable AWS console access for this new admin  
 -	Click new admin user and Create Access Keys
 -	Choose AWS CLI Access and save credentials.
-### Assign MFA to New User:
+### Assign MFA to New User
 -	Logout from Root user and login as new admin user 
 -	Setup MFA for this admin account
 
