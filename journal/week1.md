@@ -259,6 +259,7 @@ volumes:
 -	Run each of the 4 lines of Postgres code SEPARATELY in the Bash Terminal.
 
 **Run Postgres**
+
 ![Alt text](../_docs/assets/postgres.png)
 
 
