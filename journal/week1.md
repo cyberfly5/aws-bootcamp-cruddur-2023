@@ -89,9 +89,8 @@ docker build -t backend-flask ./backend-flask  # -t =tag
 ![Alt text](../_docs/assets/backend-image.png)
 **Right click the backend-flask and attach container**
 ![Alt text](../_docs/assets/backend-flask-container.png)
-**Run backend-flask container**
-![Alt text](../_docs/assets/run-backend-flask.png)
-**Prove of running python flask module and 404 error code**
+
+**Proof of running python flask module and 404 error code**
 ![Alt text](../_docs/assets/python-flask-module.png)
 
 - Click on the URL under PORTs tab to open port 4567 and add `/api/activities/home` example: https://4567-cyberfly5-awsbootcampcr-ixesrrz4eab.ws-us104.gitpod.io/api/activities/home and got the following JSON output: 
