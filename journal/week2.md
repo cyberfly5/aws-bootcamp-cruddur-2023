@@ -1,6 +1,10 @@
 # Week 2 — Distributed Tracing
 
-## HoneyComb
+## HoneyComb for Observability
+Observability is a strategic imperative for software development. Observability gives developers the confidence to build quickly and deploy more often so that they can deliver more innovation. It also helps teams make critical upgrades and migrations to scale safely and stay ahead of the competition.  
+- [HoneyComb](https://www.honeycomb.io/) is one of the tools used for Application Performance and Monitoring
+- HoneyComb gives you insights for your applications and makes it easier to troubleshoot
+- HoneyComb allows you to quickly analyze highly granular data to discover serious problems before users experience their adverse effects.
 
 Login to ui.honeycomb.io to create an account and an environment
 
@@ -98,3 +102,11 @@ gitpod /workspace/aws-bootcamp-cruddur-2023/frontend-react-js (main) $ npm i
 ![Alt text](../_docs/assets/data.png)
 
 ### HoneyComb Dataset
+- Modified app.py and home_activities to add spans and traces
+- Added instrumentation to Honeycomb to add attributes and spans
+- Ran a queries for traces and heatmap
+
+**Traces for hard-coded query from home_activities of backend-flask**
+![Alt text](../_docs/assets/honeycomb.png)
+**Heatmap query example**
+![Alt text](../_docs/assets/heatmap.png)
