@@ -109,4 +109,5 @@ gitpod /workspace/aws-bootcamp-cruddur-2023/frontend-react-js (main) $ npm i
 **Traces for hard-coded query from home_activities of backend-flask**
 ![Alt text](../_docs/assets/honeycomb.png)
 **Heatmap query example**
+
 ![Alt text](../_docs/assets/heatmap.png)
