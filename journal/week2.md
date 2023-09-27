@@ -2,7 +2,7 @@
 
 ## HoneyComb
 
-Login to ui.honeycomb.io and create and account and an environment
+Login to ui.honeycomb.io to create an account and an environment
 
 Then grab the API key from your honeycomb account and set Env Vars below:
 
@@ -12,7 +12,7 @@ export HONEYCOMB_SERVICE_NAME="Cruddur"
 gp env HONEYCOMB_API_KEY=""
 gp env HONEYCOMB_SERVICE_NAME="Cruddur" *NOT ADVISED* to set this
 ```
-**Add Env Vars to backend-flask in docker compose**
+### Add Env Vars to backend-flask in docker compose
 
 OTEL_SERVICE_NAME: 'backend-flask'
 
@@ -25,14 +25,14 @@ OTEL_EXPORTER_OTLP_HEADERS: "x-honeycomb-team=${HONEYCOMB_API_KEY}"
 
 x means custom in this case
 
-**Go to honeycomb Python tab and follow install instructions**
+### Go to honeycomb Python tab and follow install instructions
 1. Install Packages
 First, install the Honeycomb OpenTelemetry Distro packages to instrument your application with OpenTelemetry:
 
 ```
 pip install opentelemetry-api
 ```
-Next, install the instrumentation libraries for packages used in your application:
+2. Next, install the instrumentation libraries for packages used in your application:
 We'll add the following files to our `requirements.txt`
 
 ```
@@ -42,15 +42,14 @@ opentelemetry-exporter-otlp-proto-http
 opentelemetry-instrumentation-flask 
 opentelemetry-instrumentation-requests
 ```
-We'll install these dependencies:
+3. We'll install these dependencies:
 
 ```sh
 pip install -r requirements.txt
 ```
 Instrumentation requests are python http calls. Also, it's good practice to add API version for telemetry
 
-
-Add to the `app.py`
+4. Add to the `app.py`
 
 ```py
 from opentelemetry import trace
@@ -85,6 +84,7 @@ gitpod /workspace/aws-bootcamp-cruddur-2023/frontend-react-js (main) $ npm i
 
 **cd.. and run docker compose up to build the containers**
 - Proof of running containers
+
 ![Alt text](../_docs/assets/docker-up.png)
 
 ![Alt text](../_docs/assets/docker.png)
@@ -92,3 +92,9 @@ gitpod /workspace/aws-bootcamp-cruddur-2023/frontend-react-js (main) $ npm i
 **Add additional code to 'gitpod.yml' to automatically open ports below:**
 
 ![Alt text](../_docs/assets/ports.png)
+**click the frontend(3000) link to launch the app**
+![Alt text](../_docs/assets/crudder-app.png)
+**click the backend(4567) link and append /api/activities/home to see the data**
+![Alt text](../_docs/assets/data.png)
+
+### HoneyComb Dataset
