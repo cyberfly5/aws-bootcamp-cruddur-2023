@@ -75,3 +75,20 @@ app = Flask(__name__)
 FlaskInstrumentor().instrument_app(app)
 RequestsInstrumentor().instrument()
 ```
+**cd /frontend-react-js and run npm i**
+
+gitpod /workspace/aws-bootcamp-cruddur-2023/frontend-react-js (main) $ npm i
+
+**Linux distro to consider for Production security**
+- Use slim baseline like [Alpine](https://www.alpinelinux.org/) to reduce the attack surface
+- Consider redundancy, stability, speed and a secure enviroment
+
+**cd.. and run docker compose up to build the containers**
+- Proof of running containers
+![Alt text](../_docs/assets/docker-up.png)
+
+![Alt text](../_docs/assets/docker.png)
+
+**Add additional code to 'gitpod.yml' to automatically open ports below:**
+
+![Alt text](../_docs/assets/ports.png)
