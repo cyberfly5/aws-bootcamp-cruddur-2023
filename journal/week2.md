@@ -111,3 +111,17 @@ gitpod /workspace/aws-bootcamp-cruddur-2023/frontend-react-js (main) $ npm i
 **Heatmap query example**
 
 ![Alt text](../_docs/assets/heatmap.png)
+
+## Observability Security Considerations
+1. Know your WHY?
+![Alt text](../_docs/assets/observability.png)
+2. Take inventory of your current environment
+![Alt text](../_docs/assets/current-state.png)
+3. Gain Visibility and Secure your networks
+![Alt text](../_docs/assets/security.png)
+4. Insights Discovery Process
+![Alt text](../_docs/assets/security1.png)
+5. Consider a SIEM and/or MDR solution for security operations
+![Alt text](../_docs/assets/security3.png)
+## Instrument AWS X-Ray
+![Alt text](../_docs/assets/xray.png)
