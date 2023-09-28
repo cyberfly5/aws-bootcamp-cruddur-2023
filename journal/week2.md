@@ -116,6 +116,7 @@ gitpod /workspace/aws-bootcamp-cruddur-2023/frontend-react-js (main) $ npm i
 1. Know your WHY?
 
 ![Alt text](../_docs/assets/observability.png)
+
 2. Take inventory of your current environment
 ![Alt text](../_docs/assets/current-state.png)
 3. Gain Visibility and Secure your networks
