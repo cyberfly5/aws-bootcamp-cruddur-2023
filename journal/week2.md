@@ -129,3 +129,12 @@ gitpod /workspace/aws-bootcamp-cruddur-2023/frontend-react-js (main) $ npm i
 ![Alt text](../_docs/assets/xray.png)
 **X-Ray Components**
 ![Alt text](../_docs/assets/aws-xray.png)
+**Add AWS X-RAY SDK**
+
+Update backend requirements with this command
+
+aws-xray-sdk
+
+**Install SDK**
+![Alt text](../_docs/assets/sdk.png)
+**Add Middleware for tracing**
