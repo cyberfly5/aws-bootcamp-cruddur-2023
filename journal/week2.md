@@ -131,10 +131,22 @@ gitpod /workspace/aws-bootcamp-cruddur-2023/frontend-react-js (main) $ npm i
 ![Alt text](../_docs/assets/aws-xray.png)
 **Add AWS X-RAY SDK**
 
-Update backend requirements with this command
+Update backend 'requirements.txt' with this command
 
+```py
 aws-xray-sdk
+```
 
 **Install SDK**
+
 ![Alt text](../_docs/assets/sdk.png)
+
 **Add Middleware for tracing**
+```py
+from aws_xray_sdk.core import xray_recorder
+from aws_xray_sdk.ext.flask.middleware import XRayMiddleware
+
+xray_url = os.getenv("AWS_XRAY_URL")
+xray_recorder.configure(service='backend-flask', dynamic_naming=xray_url)
+XRayMiddleware(app, xray_recorder)
+```
