@@ -215,3 +215,7 @@ pip install -r requirements.txt
 **Successfully got Cloudwatch to log**
 
 ![Alt text](../_docs/assets/cloudwatch-log.png)
+
+**Test Log Example**
+
+![Alt text](../_docs/assets/test-log.png)
