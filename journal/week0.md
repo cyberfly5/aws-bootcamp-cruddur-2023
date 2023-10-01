@@ -4,6 +4,10 @@ As part of your AWS subcription, you have to keep cost in
 mind and detect any anomalies to your account. **You should configure immediate alerts via SNS and alert on anomalous spend patterns across your deployed AWS services.**  
 ![Alt text](../_docs/assets/Notification.jpg)
 
+**Billing Alarm example**
+
+![Alt text](<../_docs/assets/billing alarm.png>)
+
 ## <center> Security Considerations</center>
 **Top security best practices**
 1.	Data protection and residency in accordance with security policy

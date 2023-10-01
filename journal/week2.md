@@ -216,6 +216,73 @@ pip install -r requirements.txt
 
 ![Alt text](../_docs/assets/cloudwatch-log.png)
 
-**Test Log Example**
+**Test Log passed to API endpoint**
 
 ![Alt text](../_docs/assets/test-log.png)
+
+## Implement Rollbar Error Logging
+
+https://rollbar.com/
+
+Add SDK and select Flask Framework
+
+Create a new project in Rollbar called `Cruddur`
+
+Add to `requirements.txt`
+
+
+```
+blinker
+rollbar
+```
+
+**Install Dependencies**
+
+```sh
+pip install -r requirements.txt
+```
+![Alt text](../_docs/assets/blinker-rollbar.png)
+
+We need to set our access token
+
+```sh
+export ROLLBAR_ACCESS_TOKEN=""
+gp env ROLLBAR_ACCESS_TOKEN=""
+```
+Import for Rollbar
+
+```py
+import rollbar
+import rollbar.contrib.flask
+from flask import got_request_exception
+```
+```py
+rollbar_access_token = os.getenv('ROLLBAR_ACCESS_TOKEN')
+@app.before_first_request
+def init_rollbar():
+    """init rollbar module"""
+    rollbar.init(
+        # access token
+        rollbar_access_token,
+        # environment name
+        'production',
+        # server root directory, makes tracebacks prettier
+        root=os.path.dirname(os.path.realpath(__file__)),
+        # flask already sets up logging
+        allow_logging_basic_config=False)
+
+    # send exceptions from `app` to rollbar, using flask's signal system.
+    got_request_exception.connect(rollbar.contrib.flask.report_exception, app)
+```
+
+Add an endpoint for testing rollbar to `app.py`
+
+```py
+@app.route('/rollbar/test')
+def rollbar_test():
+    rollbar.report_message('Hello World!', 'warning')
+    return "Hello World!"
+```
+**Rollbar Flask Example**
+
+![Alt text](../_docs/assets/rollbar.png)
