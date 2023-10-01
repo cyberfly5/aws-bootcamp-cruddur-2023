@@ -211,3 +211,7 @@ watchtower
 pip install -r requirements.txt
 ```
 ![Alt text](../_docs/assets/watchtower.png)
+
+**Successfully got Cloudwatch to log**
+
+![Alt text](../_docs/assets/cloudwatch-log.png)
