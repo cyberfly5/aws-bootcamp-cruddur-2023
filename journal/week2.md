@@ -288,4 +288,5 @@ def rollbar_test():
 ![Alt text](../_docs/assets/rollbar.png)
 
 Rollbar Listening for errors 
+
 ![Alt text](../_docs/assets/rollbar-init.png)
