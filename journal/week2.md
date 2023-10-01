@@ -198,3 +198,16 @@ Then add these two env vars to our backend-flask in our `docker-compose.yml` fil
       AWS_XRAY_URL: "*4567-${GITPOD_WORKSPACE_ID}.${GITPOD_WORKSPACE_CLUSTER_HOST}*"
       AWS_XRAY_DAEMON_ADDRESS: "xray-daemon:2000"
 ```
+## CloudWatch Logs
+
+
+Add to the `requirements.txt`
+
+```
+watchtower
+```
+
+```sh
+pip install -r requirements.txt
+```
+![Alt text](../_docs/assets/watchtower.png)
