@@ -1,7 +1,7 @@
 FROM python:3.10-slim-buster
 
 # Inside Container, shared kernel os
-WORKDIR /backend-flaskdoc
+WORKDIR /backend-flask
 
 # Outside Container
 COPY requirements.txt requirements.txt
