@@ -118,7 +118,7 @@ Got blank page with errors below and had to check our Env Vars for authenticatio
 
 **Fixed AWS Env Vars and restarted docker**
 
-![Alt text](../_docs/assets/app-works.png)
+![Alt text](../_docs/assets/signup.png)
 
 ## Signin Page
 
@@ -155,10 +155,10 @@ if (cognitoErrors){
 ```
 ## Signup Page
 
+![Alt text](../_docs/assets/signup-page.png)
+
 ```js
 import { Auth } from 'aws-amplify';
-
-const [cognitoErrors, setCognitoErrors] = React.useState('');
 
 const onsubmit = async (event) => {
   event.preventDefault();
@@ -221,6 +221,23 @@ const onsubmit = async (event) => {
   return false
 }
 ```
+
+![Alt text](../_docs/assets/confirm.png)
+
+**Confirmation New User Exists in AWS**
+
+![Alt text](../_docs/assets/new-user.png)
+
+**Verified New User Status and Email in AWS**
+
+![Alt text](../_docs/assets/verified.png)
+
+
+**Successfully Logged into Crudder APP**
+
+![Alt text](../_docs/assets/logged-in.png)
+
+
 ## Recovery Page
 
 ```js
@@ -247,3 +264,35 @@ const onsubmit_confirm_code = async (event) => {
   }
   return false
 }
+```
+**What happens when you forget your password**
+
+![Alt text](../_docs/assets/recovery.png)
+
+**Confirmation Code received and we can now reset password**
+
+![Alt text](../_docs/assets/recover-pswd.png)
+
+## Authenticating Server Side
+
+Add in the `HomeFeedPage.js` a header to pass along the access token
+
+```js
+  headers: {
+    Authorization: `Bearer ${localStorage.getItem("access_token")}`
+  }
+```
+
+In the BACKEND `app.py`
+
+```py
+cors = CORS(
+  app, 
+  resources={r"/api/*": {"origins": origins}},
+  headers=['Content-Type', 'Authorization'], 
+  expose_headers='Authorization',
+  methods="OPTIONS,GET,HEAD,POST"
+)
+```
+
+

@@ -15,8 +15,6 @@ export default function SignupPage() {
   const [password, setPassword] = React.useState('');
   const [errors, setErrors] = React.useState('');
 
-  #const [cognitoErrors, setCognitoErrors] = React.useState('');
-
   const onsubmit = async (event) => {
     event.preventDefault();
     setErrors('')
