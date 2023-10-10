@@ -1,4 +1,16 @@
 # Week 4 — Postgres and RDS
+
+![Alt text](../_docs/assets/business.png)
+
+
+![Alt text](../_docs/assets/RDS.png)
+
+
+![Alt text](../_docs/assets/Best-practice.png)
+
+
+![Alt text](../_docs/assets/appsec.png)
+
 ## Provision RDS Instance
 
 ```sh
@@ -80,6 +92,8 @@ NO_DB_CONNECTION_URL=$(sed 's/\/cruddur//g' <<<"$CONNECTION_URL")
 psql $NO_DB_CONNECTION_URL -c "DROP database cruddur;"
 ```
 
+![Alt text](../_docs/assets/shell-scripts.png)
+
 https://askubuntu.com/questions/595269/use-sed-on-a-string-variable-rather-than-a-file
 
 We'll create a new bash script `bin/db-connect`
@@ -123,3 +137,92 @@ CREATE TABLE public.activities (
 );
 ```
 
+**Proof of Tables Created**
+
+![Alt text](../_docs/assets/tables.png)
+
+
+## Shell script to load the schema
+
+`bin/db-schema-load`
+
+```sh
+#! /usr/bin/bash
+
+schema_path="$(realpath .)/db/schema.sql"
+
+echo $schema_path
+
+NO_DB_CONNECTION_URL=$(sed 's/\/cruddur//g' <<<"$CONNECTION_URL")
+psql $NO_DB_CONNECTION_URL cruddur < $schema_path
+```
+
+## Shell script to load the seed data
+
+```
+#! /usr/bin/bash
+
+#echo "== db-seed
+
+
+seed_path="$(realpath .)/db/seed.sql"
+
+echo $seed_path
+
+psql $CONNECTION_URL cruddur < $seed_path
+```
+
+## Seeding data into Postgres Database
+
+-- This file was manually created
+```
+INSERT INTO public.users (display_name, handle, cognito_user_id)
+VALUES
+  ('Andrew Brown', 'andrewbrown' ,'MOCK'),
+  ('Andrew Bayko', 'bayko' ,'MOCK');
+
+INSERT INTO public.activities (user_uuid, message, expires_at)
+VALUES
+  (
+    (SELECT uuid from public.users WHERE users.handle = 'andrewbrown' LIMIT 1),
+    'This was imported as seed data!',
+    current_timestamp + interval '10 day'
+  )
+  ```
+  
+## Make prints nicer
+
+We can make prints for our shell scripts coloured so we can see what we're doing:
+
+https://stackoverflow.com/questions/5947742/how-to-change-the-output-color-of-echo-in-linux
+
+
+```sh
+CYAN='\033[1;36m'
+NO_COLOR='\033[0m'
+LABEL="db-schema-load"
+printf "${CYAN}== ${LABEL}${NO_COLOR}\n"
+```
+
+**Connect to Postgres Database**
+
+![Alt text](../_docs/assets/gained-access.png)
+
+
+![Alt text](../_docs/assets/DB-connect.png)
+
+
+## See what connections we are using
+
+```sh
+NO_DB_CONNECTION_URL=$(sed 's/\/cruddur//g' <<<"$CONNECTION_URL")
+psql $NO_DB_CONNECTION_URL -c "select pid as process_id, \
+       usename as user,  \
+       datname as db, \
+       client_addr, \
+       application_name as app,\
+       state \
+from pg_stat_activity;"
+```
+
+![Alt text](../_docs/assets/running-pids.png)
