@@ -76,7 +76,9 @@ We'll create an new folder called `bin` to hold all our bash scripts.
 mkdir /workspace/aws-bootcamp-cruddur-2023/backend-flask/bin
 ```
 
-```shexport CONNECTION_URL="postgresql://postgres:pxxxxsword@127.0.0.1:5433/cruddur"
+```sh
+
+export CONNECTION_URL="postgresql://postgres:pxxxxsword@127.0.0.1:5433/cruddur"
 gp env CONNECTION_URL="postgresql://postgres:pxxxxxword@127.0.0.1:5433/cruddur"
 
 ```
@@ -338,8 +340,12 @@ from lib.db import pool, query_wrap_array
           # this will return a tuple
           # the first field being the data
           json = cur.fetchone()
-      return json[0]
-      ```
+ ```
+
+**Proof that Join Query works after seeding**
+
+![Alt text](../_docs/assets/join-query.png)
+
 ## Connect to RDS via Gitpod
 
 In order to connect to the RDS instance we need to provide our Gitpod IP and whitelist for inbound traffic on port 5432.
