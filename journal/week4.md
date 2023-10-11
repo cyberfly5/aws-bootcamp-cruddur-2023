@@ -118,7 +118,7 @@ https://www.postgresql.org/docs/current/sql-createtable.html
 CREATE TABLE public.users (
   uuid UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
   display_name text,
-  handle text
+  handle text,
   cognito_user_id text,
   created_at TIMESTAMP default current_timestamp NOT NULL
 );
@@ -127,6 +127,7 @@ CREATE TABLE public.users (
 ```sql
 CREATE TABLE public.activities (
   uuid UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
+  user_uuid UUID NOT NULL,
   message text NOT NULL,
   replies_count integer DEFAULT 0,
   reposts_count integer DEFAULT 0,
@@ -189,6 +190,19 @@ VALUES
     current_timestamp + interval '10 day'
   )
   ```
+
+**Proof of schema load and seeding**
+
+![Alt text](../_docs/assets/seeding.png)
+
+**Proof of that we have data in our tables**
+
+![Alt text](../_docs/assets/table-data.png)
+
+**Expanded Display View of our data**
+
+![Alt text](../_docs/assets/expanded.png)
+
 ## Easily setup (reset) everything for our database
 
 
