@@ -373,3 +373,10 @@ aws ec2 modify-security-group-rules \
 ```
 
 https://docs.aws.amazon.com/cli/latest/reference/ec2/modify-security-group-rules.html#examples
+
+
+**Proof that I can update the security group remotely**
+
+![Alt text](../_docs/assets/rds-sg-rule.png)
+
+
